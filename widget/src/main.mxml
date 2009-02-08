@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
-	
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
+	width="750" height="130">
+	<mx:Style source="assets/style.css"/>
+	<mx:Panel width="100%" height="100%" title="Goonfleet Notification System"
+		paddingTop="10" paddingBottom="10" paddingLeft="10" paddingRight="10">
+		<mx:Button label="Sup" />
+	</mx:Panel>
 </mx:Application>
