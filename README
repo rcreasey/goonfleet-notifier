@@ -1,0 +1,5 @@
+Checkout:
+
+1) git clone git@github.com:jarinudom/goonfleet-notifier.git
+2) Create new Flex Builder project in widget/
+3) Link mate .swc in libs folder in build path/library path
