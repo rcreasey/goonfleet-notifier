@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EventMap xmlns:mx="http://www.adobe.com/2006/mxml" xmlns="http://mate.asfusion.com/">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.goonfleet.notifier.views.*;
+			import com.goonfleet.notifier.business.*;
+			import com.goonfleet.notifier.events.NotificationEvent;
+		]]>
+	</mx:Script>
+	
+	<!-- Debugger __________________________________________________________________ -->
+	<!-- remove during production. This tag can be placed here or in your main application -->
+	
+	<Debugger level="{Debugger.ALL}" />
+	
+	
+	<!-- NotificationEvent.GET ___________________________________________________________ -->
+	
+	<EventHandlers type="{NotificationEvent.GET}" debug="true">
+	
+		<HTTPServiceInvoker url="http://localhost/goonfleet/notifier.xml"
+				debug="true">
+			
+			<resultHandlers>
+				<!-- parse the results -->
+				<MethodInvoker generator="{NotificationServiceParser}" method="parseNotificationResults" 
+					arguments="{resultObject}" cache="none" />
+					
+				<!-- store the notification object from the parsed results -->
+				<MethodInvoker generator="{NotificationManager}" 
+					method="storeNotification" arguments="{lastReturn}"/>
+			</resultHandlers>
+			
+		</HTTPServiceInvoker>
+	</EventHandlers>
+	
+
+
+	<!-- Injectors __________________________________________________________________ -->
+	
+	<!-- these Injectors populate the Clock views with the time stored in the NotificationManager -->
+	<Injectors target="{LocalClock}" debug="true">
+		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="eveTime" />
+	</Injectors>
+	
+	<Injectors target="{EVEClock}" debug="true">
+		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="eveTime" />
+	</Injectors>
+	
+</EventMap>

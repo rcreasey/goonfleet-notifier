@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	horizontalAlign="center" verticalGap="0">
+	
+	<mx:Script>
+		<![CDATA[
+				
+			[Bindable]
+			public var dateObject:Date;
+			
+		]]>
+	</mx:Script>
+	<mx:Button enabled="false" label="{dateObject.getUTCHours() + ':' + dateObject.getUTCMinutes()}"  width="60"/>
+	<mx:Label selectable="false" text="EVE Time"  fontSize="9" width="60" textAlign="center"/>
+</mx:VBox>

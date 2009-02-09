@@ -893,7 +893,8 @@ TitleWindow
 }
 .windowTitle
 {
-	verticalAlign:middle; 
+	verticalAlign:middle;
+	fontSize: 9; 
 }
 .windowControlBar
 {
