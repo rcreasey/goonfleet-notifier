@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%"
+	paddingTop="5" paddingBottom="5" paddingLeft="10" paddingRight="10"
+	backgroundAlpha="0.05">
+	<mx:Script>
+		<![CDATA[
+			[Bindable]
+			public var op:Object;
+			
+			private function openThread(event:MouseEvent):void {
+				navigateToURL(new URLRequest(op.thread), "_blank");
+			}
+		]]>
+	</mx:Script>
+	<mx:DateFormatter id="startTimeFormatter" formatString="EEE, MMM D  H:NN" />
+	<mx:DateFormatter id="endTimeFormatter" formatString="H:NN" />
+	<mx:HBox width="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+		<mx:LinkButton label="{op.title}"
+			color="#ffffff"
+			fontSize="10" fontWeight="bold"
+			click="openThread(event)"
+			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0"/>
+		<mx:Label fontSize="10"
+			text="{startTimeFormatter.format(op.startTime.toUTCString()) + ' - ' +
+				   endTimeFormatter.format(op.endTime.toUTCString()) + ' EVE'}" />
+		<mx:Label text="{op.priority}" fontWeight="bold" color="{op.bgColor}"
+			visible="{Boolean(op.priority)}" includeInLayout="{Boolean(op.priority)}" />
+		<mx:Spacer width="100%" />
+		<mx:LinkButton label="Link" color="#ffffff"
+			visible="{Boolean(op.thread)}" includeInLayout="{Boolean(op.thread)}"
+			click="openThread(event)"
+			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" textDecoration="underline"/>
+	</mx:HBox>
+	
+	<mx:Text fontSize="9" width="100%" text="{op.text}"
+		visible="{Boolean(op.text)}" includeInLayout="{Boolean(op.text)}" />
+		
+	<mx:HBox width="100%"
+		horizontalScrollPolicy="off" verticalScrollPolicy="off"
+		fontSize="9" fontWeight="bold" horizontalGap="10">
+		<mx:Label text="{'Form up at: ' + op.formUp}"
+			visible="{Boolean(op.formUp)}" includeInLayout="{Boolean(op.formUp)}" />
+		<mx:Label text="{'Ship types: ' + op.shipTypes}"
+			visible="{Boolean(op.shipTypes)}" includeInLayout="{Boolean(op.shipTypes)}" />
+		<mx:Spacer width="100%" />
+		<mx:Label text="{'Posted by ' + op.poster}"
+			visible="{Boolean(op.poster)}" includeInLayout="{Boolean(op.poster)}" />
+	</mx:HBox>
+</mx:VBox>

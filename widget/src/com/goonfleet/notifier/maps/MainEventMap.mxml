@@ -17,7 +17,7 @@
 	
 	<!-- NotificationEvent.GET ___________________________________________________________ -->
 	
-	<EventHandlers type="{NotificationEvent.GET}" debug="true">
+	<EventHandlers type="{NotificationEvent.GET}">
 	
 		<HTTPServiceInvoker url="http://localhost/goonfleet/notifier.xml"
 				debug="true">
@@ -39,13 +39,16 @@
 
 	<!-- Injectors __________________________________________________________________ -->
 	
-	<!-- these Injectors populate the Clock views with the time stored in the NotificationManager -->
-	<Injectors target="{LocalClock}" debug="true">
+	<Injectors target="{LocalClock}">
 		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="eveTime" />
 	</Injectors>
 	
-	<Injectors target="{EVEClock}" debug="true">
+	<Injectors target="{EVEClock}">
 		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="eveTime" />
+	</Injectors>
+	
+	<Injectors target="{Ops}">
+		<PropertyInjector targetKey="ops" source="{NotificationManager}" sourceKey="ops" />
 	</Injectors>
 	
 </EventMap>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Box xmlns:mx="http://www.adobe.com/2006/mxml" 
+	verticalScrollPolicy="off" horizontalScrollPolicy="off"
+	xmlns:views="com.goonfleet.notifier.views.*">
+
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			
+			[Bindable]
+			public var ops:ArrayCollection;
+		]]>
+	</mx:Script>
+	<mx:VBox height="{this.height}" width="100%" horizontalAlign="center"
+		verticalScrollPolicy="on"
+		clipContent="true" verticalGap="2"
+		horizontalScrollPolicy="off" paddingRight="0">
+		<mx:Repeater id="opRepeater" dataProvider="{ops}">
+			<views:opItemRenderer op="{opRepeater.currentItem}" backgroundColor="{opRepeater.currentItem.bgColor}" />			
+		</mx:Repeater>
+	</mx:VBox>
+</mx:Box>

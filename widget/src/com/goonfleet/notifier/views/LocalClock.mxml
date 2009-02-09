@@ -10,6 +10,7 @@
 			
 		]]>
 	</mx:Script>
-	<mx:Button enabled="false" label="{dateObject.getHours() + ':' + dateObject.getMinutes()}"  width="60"/>
+	<mx:DateFormatter id="timeFormatter" formatString="H:NN" />
+	<mx:Button enabled="false" label="{timeFormatter.format(dateObject)}"  width="60"/>
 	<mx:Label selectable="false" text="Local Time"  fontSize="9" width="60" textAlign="center"/>
 </mx:VBox>

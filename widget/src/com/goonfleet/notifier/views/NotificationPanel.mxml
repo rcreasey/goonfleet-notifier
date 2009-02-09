@@ -4,15 +4,16 @@
 	width="100%" height="100%"
 	headerHeight="15" 
 	title="Goonfleet Notification System" 
-	paddingBottom="10" paddingLeft="15" paddingRight="10" paddingTop="10">
+	paddingBottom="0" paddingLeft="15" paddingRight="0" paddingTop="0">
 	
 	<!-- GUI ______________________________________________________________________ -->
 	
-	<mx:HBox width="100%" height="100%">
+	<mx:HBox width="100%" height="100%" horizontalGap="15">
 		<mx:VBox verticalGap="10" height="100%" verticalAlign="middle">
 			<views:EVEClock />
 			<views:LocalClock />
 		</mx:VBox>
+		<views:Ops  width="100%" height="122"/>
 	</mx:HBox>
 	
 </mx:Panel>

@@ -1,5 +1,9 @@
 package com.goonfleet.notifier.business
-{	
+{
+	import com.goonfleet.notifier.classes.Op;
+	
+	import mx.collections.ArrayCollection;
+		
 	
 	// --------------------------------------------
 	// This helper class parses data coming from the
@@ -11,8 +15,15 @@ package com.goonfleet.notifier.business
 		public function parseNotificationResults(notification:Object):Object {
 			
 			var notificationObject:Object = new Object();
-			trace(notification.opapp.timedata.evetime);
+			
 			notificationObject.eveTime = parseDate(notification.opapp.timedata.evetime);
+			
+			notificationObject.ops = new ArrayCollection;
+			
+			for each (var op:Object in notification.opapp.ops.op) {
+				
+				notificationObject.ops.addItem(new Op(op));
+			}
 			
 			return notificationObject;
 		}
