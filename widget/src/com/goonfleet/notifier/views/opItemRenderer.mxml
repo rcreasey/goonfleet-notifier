@@ -44,7 +44,7 @@
 			text="{startTimeFormatter.format(op.startTime.toUTCString()) + ' - ' +
 				   endTimeFormatter.format(op.endTime.toUTCString()) + ' EVE Time'}" />
 		<mx:Spacer width="100%" />
-		<mx:LinkButton label="Go to Thread"
+		<mx:LinkButton label="go to thread"
 			visible="{Boolean(op.thread)}" includeInLayout="{Boolean(op.thread)}"
 			click="openThread(event)" fontSize="9"
 			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" textDecoration="underline"/>
