@@ -35,7 +35,7 @@
 			color="{op.bgColor}"
 			visible="{Boolean(op.priority)}" includeInLayout="{Boolean(op.priority)}" />
 		<mx:Spacer width="100%" />
-		<mx:LinkButton id="showDescription" label="Show Details" click="toggleDescription(event)"
+		<mx:LinkButton id="showDescription" label="show details" click="toggleDescription(event)"
 			visible="{Boolean(op.text)}" includeInLayout="{Boolean(op.text)}" fontSize="9"
 			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" textDecoration="underline" />
 	</mx:HBox>
