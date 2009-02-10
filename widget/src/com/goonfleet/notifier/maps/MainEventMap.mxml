@@ -12,14 +12,14 @@
 	<!-- Debugger __________________________________________________________________ -->
 	<!-- remove during production. This tag can be placed here or in your main application -->
 	
-	<Debugger level="{Debugger.ALL}" />
+	<!-- <Debugger level="{Debugger.ALL}" /> -->
 	
 	
 	<!-- NotificationEvent.GET ___________________________________________________________ -->
 	
 	<EventHandlers type="{NotificationEvent.GET}">
 	
-		<HTTPServiceInvoker url="http://localhost/goonfleet/notifier.xml"
+		<HTTPServiceInvoker url="https://goonfleet.com/notifier_xml.php"
 				debug="true">
 			
 			<resultHandlers>
