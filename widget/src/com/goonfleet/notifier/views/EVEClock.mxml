@@ -10,7 +10,7 @@
 			
 		]]>
 	</mx:Script>
-	<mx:DateFormatter id="timeFormatter" formatString="H:NN" />
-	<mx:Button enabled="false" label="{timeFormatter.format(dateObject.toUTCString())}"  width="60"/>
-	<mx:Label selectable="false" text="EVE Time"  fontSize="9" width="60" textAlign="center"/>
+	<mx:DateFormatter id="timeFormatter" formatString="JJ:NN:SS" />
+	<mx:Button enabled="false" label="{timeFormatter.format(dateObject.toUTCString())}" />
+	<mx:Label selectable="false" text="EVE Time"  fontSize="9" textAlign="center"/>
 </mx:VBox>

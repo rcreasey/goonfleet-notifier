@@ -40,7 +40,7 @@
 	<!-- Injectors __________________________________________________________________ -->
 	
 	<Injectors target="{LocalClock}">
-		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="eveTime" />
+		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="localTime" />
 	</Injectors>
 	
 	<Injectors target="{EVEClock}">
