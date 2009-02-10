@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Box xmlns:mx="http://www.adobe.com/2006/mxml" 
 	verticalScrollPolicy="off" horizontalScrollPolicy="off"
+	width="100%" height="100%"
 	xmlns:views="com.goonfleet.notifier.views.*">
 
 	<mx:Script>
@@ -13,8 +14,8 @@
 	</mx:Script>
 	<mx:VBox height="{this.height}" width="100%" horizontalAlign="center"
 		verticalScrollPolicy="on"
-		clipContent="true" verticalGap="2"
-		horizontalScrollPolicy="off" paddingRight="0">
+		clipContent="true" verticalGap="0"
+		horizontalScrollPolicy="off" paddingRight="0" paddingLeft="0" paddingTop="0" paddingBottom="0">
 		<mx:Repeater id="opRepeater" dataProvider="{ops}">
 			<views:opItemRenderer op="{opRepeater.currentItem}" backgroundColor="{opRepeater.currentItem.bgColor}" />			
 		</mx:Repeater>

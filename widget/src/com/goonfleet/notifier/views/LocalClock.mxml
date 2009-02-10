@@ -10,7 +10,8 @@
 			
 		]]>
 	</mx:Script>
-	<mx:DateFormatter id="timeFormatter" formatString="JJ:NN:SS" />
-	<mx:Button enabled="false" label="{timeFormatter.format(dateObject)}" />
-	<mx:Label selectable="false" text="Forum Time"  fontSize="9" textAlign="center"/>
+	<mx:DateFormatter id="timeFormatter" formatString="MMM D JJ:NN:SS" />
+	<mx:Button enabled="false" label="{timeFormatter.format(dateObject)}" disabledColor="#ffffff"
+		width="130" paddingLeft="0" paddingRight="0" />
+	<mx:Label selectable="false" text="Forum Time" width="130" fontSize="9" textAlign="center"/>
 </mx:VBox>

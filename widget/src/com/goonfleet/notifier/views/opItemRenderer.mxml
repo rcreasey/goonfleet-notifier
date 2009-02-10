@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
 	horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%"
-	paddingTop="5" paddingBottom="5" paddingLeft="10" paddingRight="10"
-	backgroundAlpha="0.05">
+	paddingTop="10" paddingBottom="10" paddingLeft="10" paddingRight="10" verticalGap="0"
+	backgroundAlpha="0.05" borderColor="#000000" borderSides="bottom" borderStyle="solid" borderThickness="1">
 	<mx:Script>
 		<![CDATA[
 			[Bindable]
@@ -11,34 +11,50 @@
 			private function openThread(event:MouseEvent):void {
 				navigateToURL(new URLRequest(op.thread), "_blank");
 			}
+			
+			private function toggleDescription(event:MouseEvent):void {
+				if (description.visible == false) {
+					description.includeInLayout = true;
+					description.visible = true;
+					showDescription.label = "hide details";
+				} else {
+					description.includeInLayout = false;
+					description.visible = false;
+					showDescription.label = "show details";
+				}
+			}
 		]]>
 	</mx:Script>
-	<mx:DateFormatter id="startTimeFormatter" formatString="EEE, MMM D  H:NN" />
-	<mx:DateFormatter id="endTimeFormatter" formatString="H:NN" />
+	<mx:DateFormatter id="startTimeFormatter" formatString="EEEE, MMM D J:NN" />
+	<mx:DateFormatter id="endTimeFormatter" formatString="EEEE, MMM D J:NN" />
 	<mx:HBox width="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off">
-		<mx:LinkButton label="{op.title}"
-			color="#ffffff"
-			fontSize="10" fontWeight="bold"
-			click="openThread(event)"
-			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0"/>
-		<mx:Label fontSize="10"
-			text="{startTimeFormatter.format(op.startTime.toUTCString()) + ' - ' +
-				   endTimeFormatter.format(op.endTime.toUTCString()) + ' EVE'}" />
-		<mx:Label text="{op.priority}" fontWeight="bold" color="{op.bgColor}"
+		<mx:Label text="{op.title}"
+			fontSize="12" fontWeight="bold" />
+		<mx:Label text="{op.priority}"
+			fontSize="12" fontWeight="bold"
+			color="{op.bgColor}"
 			visible="{Boolean(op.priority)}" includeInLayout="{Boolean(op.priority)}" />
 		<mx:Spacer width="100%" />
-		<mx:LinkButton label="Link" color="#ffffff"
+		<mx:LinkButton id="showDescription" label="Show Details" click="toggleDescription(event)"
+			visible="{Boolean(op.text)}" includeInLayout="{Boolean(op.text)}" fontSize="9"
+			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" textDecoration="underline" />
+	</mx:HBox>
+	<mx:HBox width="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off" paddingTop="2">
+		<mx:Label fontSize="10"
+			text="{startTimeFormatter.format(op.startTime.toUTCString()) + ' - ' +
+				   endTimeFormatter.format(op.endTime.toUTCString()) + ' EVE Time'}" />
+		<mx:Spacer width="100%" />
+		<mx:LinkButton label="Go to Thread"
 			visible="{Boolean(op.thread)}" includeInLayout="{Boolean(op.thread)}"
-			click="openThread(event)"
+			click="openThread(event)" fontSize="9"
 			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" textDecoration="underline"/>
 	</mx:HBox>
-	
-	<mx:Text fontSize="9" width="100%" text="{op.text}"
-		visible="{Boolean(op.text)}" includeInLayout="{Boolean(op.text)}" />
+	<mx:Text id="description" fontSize="10" width="100%" text="{op.text}"
+		visible="false" includeInLayout="false" paddingTop="5" />
 		
 	<mx:HBox width="100%"
 		horizontalScrollPolicy="off" verticalScrollPolicy="off"
-		fontSize="9" fontWeight="bold" horizontalGap="10">
+		fontSize="9" fontWeight="bold" horizontalGap="10" paddingTop="5">
 		<mx:Label text="{'Form up at: ' + op.formUp}"
 			visible="{Boolean(op.formUp)}" includeInLayout="{Boolean(op.formUp)}" />
 		<mx:Label text="{'Ship types: ' + op.shipTypes}"
