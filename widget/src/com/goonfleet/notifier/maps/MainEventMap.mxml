@@ -19,8 +19,8 @@
 	
 	<EventHandlers type="{NotificationEvent.GET}">
 	
-		<HTTPServiceInvoker url="https://goonfleet.com/notifier_xml.php"
-				debug="true">
+		<!-- <HTTPServiceInvoker url="https://goonfleet.com/notifier_xml.php"> -->
+		<HTTPServiceInvoker url="http://localhost/goonfleet/notifier.xml" >
 			
 			<resultHandlers>
 				<!-- parse the results -->
@@ -38,10 +38,6 @@
 
 
 	<!-- Injectors __________________________________________________________________ -->
-	
-	<Injectors target="{LocalClock}">
-		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="localTime" />
-	</Injectors>
 	
 	<Injectors target="{EVEClock}">
 		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="eveTime" />
