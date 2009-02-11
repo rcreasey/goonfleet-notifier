@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"
 	width="750" height="140"
+	backgroundAlpha="0"
 	xmlns:maps="com.goonfleet.notifier.maps.*"
 	xmlns:views="com.goonfleet.notifier.views.*"
 	creationComplete="getNotification()">
