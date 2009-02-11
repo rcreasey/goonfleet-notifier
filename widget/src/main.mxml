@@ -24,6 +24,6 @@
 	<maps:MainEventMap />
 	
 	<!-- Views -->
-	<views:NotificationPanel />
+	<views:MainView />
 	
 </mx:Application>
