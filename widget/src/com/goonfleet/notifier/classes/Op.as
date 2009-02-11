@@ -54,7 +54,7 @@ package com.goonfleet.notifier.classes
 					bgColor = 0xff0000;
 					break;
 				default:
-					bgColor = null;
+					bgColor = undefined;
 			}
 		}
 		
