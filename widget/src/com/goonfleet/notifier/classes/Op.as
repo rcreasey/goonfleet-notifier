@@ -59,7 +59,7 @@ package com.goonfleet.notifier.classes
 					priorityLabelColor = 0x660000;
 					break;
 				default:
-					bgColor = 0xFFFFFF;
+					bgColor = 0xEEEEEE;
 					priorityLabelColor = 0x000000;
 			}
 		}
