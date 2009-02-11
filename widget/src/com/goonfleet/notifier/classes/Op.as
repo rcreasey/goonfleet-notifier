@@ -48,10 +48,10 @@ package com.goonfleet.notifier.classes
 			
 			switch (priority) {
 				case "important":
-					bgColor = 0xffff00;
+					bgColor = 0xFCFDAD;
 					break;
 				case "critical":
-					bgColor = 0xff0000;
+					bgColor = 0xF9D1C3;
 					break;
 				default:
 					bgColor = undefined;

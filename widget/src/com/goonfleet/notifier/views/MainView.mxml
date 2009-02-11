@@ -8,7 +8,7 @@
 	
 	<mx:HBox id="statusBox" horizontalAlign="left" paddingLeft="10" paddingRight="10"
 		borderColor="#000000" borderSides="bottom" borderStyle="solid" borderThickness="1"
-		 left="0" right="0" top="0" >
+		 left="0" right="0" top="0" backgroundColor="#FFFFFF">
 		<views:EVEClock />
 	</mx:HBox>
 	
