@@ -5,7 +5,7 @@
 		<![CDATA[
 			import com.goonfleet.notifier.views.*;
 			import com.goonfleet.notifier.business.*;
-			import com.goonfleet.notifier.events.NotificationEvent;
+			import com.goonfleet.notifier.events.*;
 		]]>
 	</mx:Script>
 	
@@ -34,7 +34,6 @@
 			
 		</HTTPServiceInvoker>
 	</EventHandlers>
-	
 
 
 	<!-- Injectors __________________________________________________________________ -->
@@ -45,6 +44,10 @@
 	
 	<Injectors target="{Ops}">
 		<PropertyInjector targetKey="ops" source="{NotificationManager}" sourceKey="ops" />
+	</Injectors>
+	
+	<Injectors target="{opItemRenderer}">
+		<PropertyInjector targetKey="eveTime" source="{NotificationManager}" sourceKey="eveTime" />
 	</Injectors>
 	
 </EventMap>

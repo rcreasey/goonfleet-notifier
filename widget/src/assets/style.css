@@ -5,8 +5,7 @@
 */
 Application
 {
-	backgroundGradientAlphas: 1.0, 1.0;
-	backgroundGradientColors: #333333, #333333;
+	backgroundColor: #ffffff;
 }
 
 
@@ -25,28 +24,27 @@ ApplicationControlBar
 //------------------------------
 //  global
 //------------------------------
-*/
+
 global
 {
 	backgroundGradientAlphas: 1.0, 1.0;
 	backgroundGradientColors: #000000, #000000;
 	backgroundDisabledColor: #DDDDDD;
 	focusThickness: 1;
-	/* focusAlpha: 0.05; */
+	/* focusAlpha: 0.05;
 	focusAlpha: 0.0;
 	themeColor: #FFFFFF;
 }
 
 
 
-/*
+
 //------------------------------
 //  Button
 //------------------------------
-*/
 Button
 {
-	color: #AAAAAA;
+	color: #000000;
 	textRollOverColor: #FFFFFF;
 	textSelectedColor:#FFFFFF;
 	disabledColor:#5A5A5A;
@@ -65,7 +63,6 @@ Button
 
 
 
-/*
 //------------------------------
 //  CursorManager
 //------------------------------
@@ -103,8 +100,8 @@ HScrollBar
 */
 Label
 {
-	color: #FFFFFF;
-	disabledColor: #BBBBBB;
+	color: #000000;
+	disabledColor: #cccccc;
 }
 
 
@@ -112,7 +109,6 @@ Label
 //------------------------------
 //  LinkButton
 //------------------------------
-*/
 LinkButton
 {
 	rollOverColor: #222222;
@@ -122,7 +118,6 @@ LinkButton
 }
 
 
-/*
 //------------------------------
 //  List
 //------------------------------

@@ -2,16 +2,16 @@
 <mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
 	xmlns:views="com.goonfleet.notifier.views.*"
 	width="100%" height="100%"
-	paddingBottom="0" paddingLeft="15" paddingRight="0" paddingTop="0">
+	paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
 	
 	<!-- GUI ______________________________________________________________________ -->
 	
-	<mx:VBox id="clockBox" verticalGap="10" verticalAlign="middle"
-		paddingLeft="10" paddingRight="10"
-		top="0" left="0" bottom="0">
+	<mx:HBox id="statusBox" horizontalAlign="left" paddingLeft="10" paddingRight="10"
+		borderColor="#000000" borderSides="bottom" borderStyle="solid" borderThickness="1"
+		 left="0" right="0" top="0" >
 		<views:EVEClock />
-	</mx:VBox>
-	<views:Ops  width="100%" borderColor="#000000" borderSides="left" borderStyle="solid" borderThickness="1"
-		left="{clockBox.width}" top="0" right="0" bottom="0"/>
+	</mx:HBox>
+	
+	<views:Ops left="0" top="{statusBox.height}" right="0" bottom="0"/>
 	
 </mx:Canvas>

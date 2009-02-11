@@ -1,66 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
 	horizontalScrollPolicy="off" verticalScrollPolicy="off" width="100%"
-	paddingTop="10" paddingBottom="10" paddingLeft="10" paddingRight="10" verticalGap="0"
-	backgroundAlpha="0.05" borderColor="#000000" borderSides="bottom" borderStyle="solid" borderThickness="1">
+	paddingTop="5" paddingBottom="5" paddingLeft="10" paddingRight="10" verticalGap="0"
+	backgroundAlpha="0.1" borderColor="#000000" borderSides="bottom" borderStyle="solid" borderThickness="1"
+	xmlns:mate="http://mate.asfusion.com/">
 	<mx:Script>
 		<![CDATA[
+			
+			import com.goonfleet.notifier.events.ClockEvent;
+			
 			[Bindable]
 			public var op:Object;
+			
+			[Bindable]
+			public var eveTime:Date;
+			
+			[Bindable]
+			public var countdown:String;
 			
 			private function openThread(event:MouseEvent):void {
 				navigateToURL(new URLRequest(op.thread), "_blank");
 			}
 			
-			private function toggleDescription(event:MouseEvent):void {
-				if (description.visible == false) {
-					description.includeInLayout = true;
-					description.visible = true;
-					showDescription.label = "hide details";
+			private function toggleView(event:MouseEvent):void {
+				if (moreInfo.visible == false) {
+					moreInfo.includeInLayout = true;
+					moreInfo.visible = true;
+					showMore.label = "(less)";
 				} else {
-					description.includeInLayout = false;
-					description.visible = false;
-					showDescription.label = "show details";
+					moreInfo.includeInLayout = false;
+					moreInfo.visible = false;
+					showMore.label = "(more)";
 				}
+			}
+			
+			private function updateCountdownTimer(event:Event):void {
+				if (eveTime) {
+					if (op.endTime < eveTime) {
+						countdown = "over";
+					} else {
+						countdown = getCountDown(op.startTime.getTime() - eveTime.getTime());
+					}	
+				}
+			}
+			
+			private function getCountDown(uptime:Number):String {
+				if(uptime <= 0) return "started";
+	        	
+				var secs:Number = uptime/1000; 
+				var result:String = new String();
+				
+				var months:int = secs/(30 * 24 * 3600);
+				secs = secs % (30 * 24 * 3600);
+				if(months > 0) result += months + "m ";
+				
+				var weeks:int = secs/(7 * 24 * 3600);
+				secs = secs % (7 * 24 * 3600);
+				if(weeks > 0) result += weeks + "w ";
+				
+				var days:int = secs/(24 * 3600);
+				secs = secs % (24 * 3600);
+				if(days > 0) result += days + "d ";
+				
+				var hours:int = secs/3600;
+				secs = secs % 3600;
+				if(hours > 0) result += hours + "h ";
+				
+				var minutes:int = secs/60;
+				secs = secs % 60;
+				if(minutes > 0) result += minutes + "m ";
+															
+	        	if(Math.round(secs) > 0) result += Math.round(secs) + "s";
+	        	
+	        	return result;
 			}
 		]]>
 	</mx:Script>
-	<mx:DateFormatter id="startTimeFormatter" formatString="EEEE, MMM D J:NN" />
-	<mx:DateFormatter id="endTimeFormatter" formatString="EEEE, MMM D J:NN" />
+
+	<mate:Listener type="{ClockEvent.TICK}" receive="updateCountdownTimer(event)" />
+	
+	<mx:DateFormatter id="startTimeFormatter" formatString="MMM D J:NN" />
+	<mx:DateFormatter id="endTimeFormatter" formatString="MMM D J:NN" />
 	<mx:HBox width="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off">
 		<mx:Label text="{op.title}"
-			fontSize="12" fontWeight="bold" />
-		<mx:Label text="{op.priority}"
-			fontSize="12" fontWeight="bold"
-			color="{op.bgColor}"
-			visible="{Boolean(op.priority)}" includeInLayout="{Boolean(op.priority)}" />
-		<mx:Spacer width="100%" />
-		<mx:LinkButton id="showDescription" label="show details" click="toggleDescription(event)"
-			visible="{Boolean(op.text)}" includeInLayout="{Boolean(op.text)}" fontSize="9"
-			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" textDecoration="underline" />
-	</mx:HBox>
-	<mx:HBox width="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off" paddingTop="2">
-		<mx:Label fontSize="10"
-			text="{startTimeFormatter.format(op.startTime.toUTCString()) + ' - ' +
-				   endTimeFormatter.format(op.endTime.toUTCString()) + ' EVE Time'}" />
+			fontSize="10" fontWeight="bold" />
+		<mx:Label text="{countdown}" color="#333333" fontSize="10" />
 		<mx:Spacer width="100%" />
 		<mx:LinkButton label="go to thread"
 			visible="{Boolean(op.thread)}" includeInLayout="{Boolean(op.thread)}"
 			click="openThread(event)" fontSize="9"
-			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" textDecoration="underline"/>
+			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" />
+		<mx:LinkButton id="showMore" label="(more)" click="toggleView(event)"
+			visible="{Boolean(op.text)}" includeInLayout="{Boolean(op.text)}" fontSize="9"
+			paddingLeft="3" paddingRight="3" paddingTop="0" paddingBottom="0" />
 	</mx:HBox>
-	<mx:Text id="description" fontSize="10" width="100%" text="{op.text}"
-		visible="false" includeInLayout="false" paddingTop="5" />
-		
-	<mx:HBox width="100%"
+
+	<mx:VBox width="100%" id="moreInfo" visible="false" includeInLayout="false"
 		horizontalScrollPolicy="off" verticalScrollPolicy="off"
-		fontSize="9" fontWeight="bold" horizontalGap="10" paddingTop="5">
-		<mx:Label text="{'Form up at: ' + op.formUp}"
-			visible="{Boolean(op.formUp)}" includeInLayout="{Boolean(op.formUp)}" />
-		<mx:Label text="{'Ship types: ' + op.shipTypes}"
-			visible="{Boolean(op.shipTypes)}" includeInLayout="{Boolean(op.shipTypes)}" />
-		<mx:Spacer width="100%" />
-		<mx:Label text="{'Posted by ' + op.poster}"
-			visible="{Boolean(op.poster)}" includeInLayout="{Boolean(op.poster)}" />
-	</mx:HBox>
+		fontSize="10" verticalGap="5" paddingTop="5">
+		<mx:Label
+			text="{startTimeFormatter.format(op.startTime.toUTCString()) + ' - ' +
+				   endTimeFormatter.format(op.endTime.toUTCString()) + ' EVE'}" />
+		<mx:HBox width="100%" horizontalGap="10" 
+			horizontalScrollPolicy="off" verticalScrollPolicy="off">
+			<mx:Label text="{'Form up at: ' + op.formUp}"
+				visible="{Boolean(op.formUp)}" includeInLayout="{Boolean(op.formUp)}" />
+			<mx:Label text="{'Ship types: ' + op.shipTypes}"
+				visible="{Boolean(op.shipTypes)}" includeInLayout="{Boolean(op.shipTypes)}" />
+			<mx:Spacer width="100%" />
+			<mx:Label text="{'Posted by ' + op.poster}"
+				visible="{Boolean(op.poster)}" includeInLayout="{Boolean(op.poster)}" />
+		</mx:HBox>
+	</mx:VBox>
 </mx:VBox>

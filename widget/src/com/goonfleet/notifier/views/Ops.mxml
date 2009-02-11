@@ -13,7 +13,7 @@
 		]]>
 	</mx:Script>
 	<mx:VBox height="{this.height}" width="100%" horizontalAlign="center"
-		verticalScrollPolicy="on"
+		verticalScrollPolicy="auto"
 		clipContent="true" verticalGap="0"
 		horizontalScrollPolicy="off" paddingRight="0" paddingLeft="0" paddingTop="0" paddingBottom="0">
 		<mx:Repeater id="opRepeater" dataProvider="{ops}">

@@ -1,11 +1,14 @@
 package com.goonfleet.notifier.business
 {
+	import com.goonfleet.notifier.events.ClockEvent;
+	
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 	
 	import mx.collections.ArrayCollection;
 	import mx.collections.Sort;
 	import mx.collections.SortField;
+	import mx.core.Application;
 		
 	public class NotificationManager
 	{
@@ -39,6 +42,9 @@ package com.goonfleet.notifier.business
 		
 		public function updateClock(event:TimerEvent):void {
 			eveTime = new Date(eveTime.time + 1000);
+			
+			var clockEvent:ClockEvent = new ClockEvent(ClockEvent.TICK);
+			Application.application.dispatchEvent(clockEvent);
 		}
 	}
 }
