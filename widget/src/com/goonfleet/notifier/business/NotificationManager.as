@@ -16,9 +16,6 @@ package com.goonfleet.notifier.business
 		public var eveTime:Date;
 		
 		[Bindable]
-		public var localTime:Date;
-		
-		[Bindable]
 		public var ops:ArrayCollection;
 		
 		
@@ -27,7 +24,6 @@ package com.goonfleet.notifier.business
 			opSort.fields = [new SortField("startTime")];
 			
 			eveTime = notification.eveTime;
-			localTime = notification.localTime;
 			startClock();
 			
 			ops = notification.ops;
@@ -43,7 +39,6 @@ package com.goonfleet.notifier.business
 		
 		public function updateClock(event:TimerEvent):void {
 			eveTime = new Date(eveTime.time + 1000);
-			localTime = new Date(localTime.time + 1000);
 		}
 	}
 }

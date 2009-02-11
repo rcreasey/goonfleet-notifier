@@ -17,7 +17,6 @@ package com.goonfleet.notifier.business
 			var notificationObject:Object = new Object();
 			
 			notificationObject.eveTime = parseDate(notification.opapp.timedata.evetime);
-			notificationObject.localTime = parseDate(notification.opapp.timedata.localtime);
 			
 			notificationObject.ops = new ArrayCollection;
 			
