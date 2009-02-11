@@ -9,16 +9,6 @@ Application
 }
 
 
-/*
-//------------------------------
-//  ApplicationControlBar
-//------------------------------
-*/
-ApplicationControlBar
-{
-	borderSkin: Embed(source="kingnarestyle.swf", symbol="ApplicationControlBar_BackgroundSkin");
-}
-
 
 /*
 //------------------------------
@@ -117,101 +107,6 @@ LinkButton
 	cornerRadius: 0;
 }
 
-
-//------------------------------
-//  List
-//------------------------------
-*/
-List
-{
-	color: #BBBBBB;
-	rollOverColor: #555555;
-	selectionColor: #444444;
-	textRollOverColor: #FFFFFF;
-	textSelectedColor: #FFFFFF;
-	borderColor: #222222;
-	disabledColor: #666666;
-	backgroundColor: #333333;
-	borderStyle: solid;
-	
-}
-
-
-/*
-//------------------------------
-//  Panel
-//------------------------------
-*/
-/* Panel without backgroundImage and titleBackgroundSkin. */
-/* 
-{
-	cornerRadius: 2;
-	borderThicknessLeft: 5;
-	borderThicknessRight: 5;
-	color: #DDDDDD;
-	roundedBottomCorners: true;
-	shadowDistance: 1;
-	backgroundColor: #333333;
-	headerHeight: 22;
-	borderAlpha: 0.2;
-} */
-
-Panel
-{
-	color: #DDDDDD;
-	backgroundColor: #333333;
-	cornerRadius: 2;
-	roundedBottomCorners: true;
-	shadowDistance: 1;
-	dropShadowEnabled: true;
-	
-	borderColor: #555555;
-	borderAlpha: 0.9;
-	borderStyle: solid;
-	borderThickness:2;
-	
-	headerHeight: 28;
-	titleBackgroundSkin: Embed(source="kingnarestyle.swf", symbol="Panel_titleBackgroundSkin");
-	backgroundImage: Embed(source="kingnarestyle.swf", symbol="Panel_backgroundImage");
-	/* Panel_SpBackgroundImage */
-	backgroundSize: "100%";
-	titleStyleName: "windowTitle";
-	controlBarStyleName: ControlBar;
-	borderThicknessRight: 0;
-	borderThicknessLeft: 0;
-	borderThicknessBottom: 0;
-	borderThicknessTop: -1;
-}
-
-/*
-//------------------------------
-//  TitleWindow
-//------------------------------
-*/
-TitleWindow
-{
-	closeButtonDisabledSkin: Embed(source="kingnarestyle.swf",symbol="Panel_closeButtonDisabledSkin");
-	closeButtonDownSkin: Embed(source="kingnarestyle.swf",symbol="Panel_closeButtonDownSkin");
-	closeButtonOverSkin: Embed(source="kingnarestyle.swf",symbol="Panel_closeButtonOverSkin");
-	closeButtonUpSkin: Embed(source="kingnarestyle.swf",symbol="Panel_closeButtonUpSkin");
-	titleStyleName: "windowTitle";
-	cornerRadius:2;
-	backgroundColor: #333333;
-	borderThickness:2;
-	controlBarStyleName: "windowControlBar";
-	borderStyle: solid; 
-}
-.windowTitle
-{
-	verticalAlign:middle;
-	fontSize: 9; 
-}
-.windowControlBar
-{
-	backgroundImage: Embed(source="kingnarestyle.swf",symbol="ApplicationControlBar_BackgroundSkin");
-	backgroundSize:"100%";
-}
-
 /*
 //------------------------------
 //  ToolTip
@@ -256,33 +151,6 @@ VScrollBar
 	downArrowSkin:  ClassReference(null); */
 }
 
-/*
-//------------------------------
-//  bg
-//------------------------------
-*/
-.bgSkin
-{
-	borderSkin: Embed(source="kingnarestyle.swf", symbol="ApplicationControlBar_BackgroundSkin");
-}
-.bgGreenSkin
-{
-	borderSkin: Embed(source="kingnarestyle.swf", symbol="GreenBackgroundSkin");
-}
-.bgRedSkin
-{
-	borderSkin: Embed(source="kingnarestyle.swf", symbol="RedBackgroundSkin");
-}
-.textBorder
-{
-	borderSkin: Embed(source="kingnarestyle.swf", symbol="TextInput_borderSkin"); 
-}
-
-/* AIR Part Test*/
-Window
-{
-	 statusBarBackgroundColor:#C0C0C0;
-}
 
 /* End */
 
