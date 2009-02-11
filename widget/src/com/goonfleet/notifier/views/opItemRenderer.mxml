@@ -82,6 +82,10 @@
 	<mx:DateFormatter id="startTimeFormatter" formatString="EEE, MMM D J:NN" />
 	<mx:DateFormatter id="endTimeFormatter" formatString="EEE, MMM D J:NN" />
 	<mx:HBox width="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+		<mx:Label text="{op.priority}"
+			paddingLeft="2" paddingRight="2" paddingTop="0" paddingBottom="0"
+			color="#ffffff" fontSize="9" fontWeight="bold"
+			opaqueBackground="{op.priorityLabelColor}"/>
 		<mx:Label text="{op.title}"
 			fontSize="10" fontWeight="bold" />
 		<mx:Label text="{countdown}" fontSize="10" />

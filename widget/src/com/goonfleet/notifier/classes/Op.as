@@ -16,6 +16,9 @@ package com.goonfleet.notifier.classes
 		public var priority:String;
 		
 		[Bindable]
+		public var priorityLabelColor:uint;
+		
+		[Bindable]
 		public var bgColor:uint;
 		
 		[Bindable]
@@ -49,12 +52,15 @@ package com.goonfleet.notifier.classes
 			switch (priority) {
 				case "important":
 					bgColor = 0xFCFDAD;
+					priorityLabelColor = 0x888800;
 					break;
 				case "critical":
 					bgColor = 0xF9D1C3;
+					priorityLabelColor = 0x660000;
 					break;
 				default:
-					bgColor = undefined;
+					bgColor = 0xFFFFFF;
+					priorityLabelColor = 0x000000;
 			}
 		}
 		
