@@ -42,6 +42,11 @@
 		<PropertyInjector targetKey="dateObject" source="{NotificationManager}" sourceKey="eveTime" />
 	</Injectors>
 	
+	<Injectors target="{Notices}">
+		<PropertyInjector targetKey="eveTime" source="{NotificationManager}" sourceKey="eveTime" />
+		<PropertyInjector targetKey="notice" source="{NotificationManager}" sourceKey="currentNotice" />
+	</Injectors>
+	
 	<Injectors target="{Ops}">
 		<PropertyInjector targetKey="ops" source="{NotificationManager}" sourceKey="ops" />
 	</Injectors>

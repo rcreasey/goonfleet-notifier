@@ -70,7 +70,7 @@
 				secs = secs % 60;
 				if(minutes > 0) result += minutes + "m ";
 															
-	        	if(Math.round(secs) > 0) result += Math.round(secs) + "s";
+	        	// if(Math.round(secs) > 0) result += Math.round(secs) + "s";
 	        	
 	        	return result;
 			}

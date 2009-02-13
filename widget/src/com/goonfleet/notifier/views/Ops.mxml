@@ -15,6 +15,7 @@
 	<mx:VBox height="{this.height}" width="100%" horizontalAlign="center"
 		verticalScrollPolicy="auto"
 		clipContent="true" verticalGap="0"
+		borderColor="#000000" borderSides="top" borderStyle="solid" borderThickness="1"
 		horizontalScrollPolicy="off" paddingRight="0" paddingLeft="0" paddingTop="0" paddingBottom="0">
 		<mx:Repeater id="opRepeater" dataProvider="{ops}">
 			<views:opItemRenderer op="{opRepeater.currentItem}" backgroundColor="{opRepeater.currentItem.bgColor}" />			

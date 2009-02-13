@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Label xmlns:mx="http://www.adobe.com/2006/mxml"
 	selectable="false"
-	fontSize="14" fontWeight="bold"
-	text="{'EVE Time: ' + timeFormatter.format(dateObject.toUTCString())}">
+	fontSize="12" fontWeight="bold"
+	text="{timeFormatter.format(dateObject.toUTCString()) + ' EVE'}">
 	
 	<mx:Script>
 		<![CDATA[

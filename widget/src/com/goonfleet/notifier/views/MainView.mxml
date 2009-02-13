@@ -6,10 +6,13 @@
 	
 	<!-- GUI ______________________________________________________________________ -->
 	
-	<mx:HBox id="statusBox" horizontalAlign="left" paddingLeft="10" paddingRight="10"
-		borderColor="#000000" borderSides="bottom" borderStyle="solid" borderThickness="1"
-		 left="0" right="0" top="0" backgroundColor="#FFFFFF">
+	<mx:HBox id="statusBox" horizontalAlign="left" paddingLeft="10" paddingRight="0"
+		left="0" right="0" top="0"
+		horizontalGap="10"
+		backgroundColor="#FFFFFF" 
+		verticalAlign="middle">
 		<views:EVEClock />
+		<views:Notices height="100%" width="100%" backgroundColor="#ffffcc" />
 	</mx:HBox>
 	
 	<views:Ops left="0" top="{statusBox.height}" right="0" bottom="0"/>

@@ -1,6 +1,6 @@
 package com.goonfleet.notifier.business
 {
-	import com.goonfleet.notifier.classes.Op;
+	import com.goonfleet.notifier.classes.*;
 	
 	import mx.collections.ArrayCollection;
 		
@@ -13,16 +13,31 @@ package com.goonfleet.notifier.business
 	public class NotificationServiceParser
 	{		
 		public function parseNotificationResults(notification:Object):Object {
-			
+									
 			var notificationObject:Object = new Object();
+			
 			
 			notificationObject.eveTime = parseDate(notification.opapp.timedata.evetime);
 			
-			notificationObject.ops = new ArrayCollection;
+			notificationObject.ops = new ArrayCollection();
 			
-			for each (var op:Object in notification.opapp.ops.op) {
-				
-				notificationObject.ops.addItem(new Op(op));
+			if (notification.opapp.ops.op.length == undefined) {
+				notificationObject.ops.addItem(new Op(notification.opapp.ops.op));
+			} else {
+				for each (var op:Object in notification.opapp.ops.op) {
+					notificationObject.ops.addItem(new Op(op));
+				}
+			}
+			
+			notificationObject.notices = new ArrayCollection();
+			
+			if (notification.opapp.notices.notice.length == undefined) {
+				notificationObject.notices.addItem(new Notice(notification.opapp.notices.notice));
+			} else {
+				for each (var notice:Object in notification.opapp.notices.notice) {
+					notificationObject.ops.addItem(new Notice(notice));
+				}
+				notificationObject.notices = notification.opapp.notices.notice;
 			}
 			
 			return notificationObject;
