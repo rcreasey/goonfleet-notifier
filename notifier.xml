@@ -1,0 +1,82 @@
+<opapp>
+	<timedata>
+		<evetime>2009-02-12 23:54:21 UTC</evetime>
+		<localtime>2009-02-12 15:54:21 -8</localtime>
+	</timedata>
+	<notices>
+		<notice>
+			<expires>1236268800</expires>
+			<countdown>true</countdown>
+			<poster>The Mittani</poster>
+			<text>Kenny Regains Full Sov in Delve</text>
+		</notice>
+	</notices>
+	<ops>
+		<op>
+			<title>GET TO THE CHOPPA (XGH Evac Op)</title>
+			<startTime>2009-02-13 00:00:00 UTC</startTime>
+			<endTime>2009-02-13 23:00:00 UTC</endTime>
+			<priority>critical</priority>
+			<thread>http://goonfleet.com/showthread.php?t=125012</thread>
+			<formup>XGH</formup>
+			<shiptypes>All Ships!</shiptypes>
+			<text><![CDATA[The massive evacuation from XGH will be happening.
+]]></text>
+			<poster>Solo Drakban</poster>
+		</op>
+		<op>
+			<title>8WA CSAA out of reinforced (US TZ KILL TITAN)</title>
+			<startTime>2009-02-13 02:00:00 UTC</startTime>
+			<endTime>2009-02-13 03:00:00 UTC</endTime>
+			<priority>critical</priority>
+			<thread>http://goonfleet.com/showthread.php?t=125781</thread>
+			<formup>319-</formup>
+			<shiptypes>Battleships &gt; hictors &gt; dictors</shiptypes>
+			<text><![CDATA[We ninjaed some dreads in pre-dt and reinforced this before evol could time stront (no big deal). We got a PERFECT us timezone timer out of it. We have evidence that this is the real deal, that is, it's actually got a titan/ms in it. Show up for this. Get all of your alts on the second (third? fourth?) CSAA mail.
+]]></text>
+			<poster>Solo Drakban</poster>
+		</op>
+		<op>
+			<title>K-9 convoy Thurs 11pm US (Fri 0400 EVE)</title>
+			<startTime>2009-02-13 04:00:00 UTC</startTime>
+			<endTime>2009-02-13 07:00:00 UTC</endTime>
+			<priority>regular</priority>
+			<thread>http://goonfleet.com/showthread.php?t=125761</thread>
+			<formup>K-9</formup>
+			<shiptypes/>
+			<text><![CDATA[Post if youre interested in a quick (only ~23 jumps) convoy from 2-R/K-9 to Delve. Exact time TBD, on Thursday evening/night US Time (sometime between 0000 and 0400 EVE). Any ship type will be welcome, but if you have a freighter provide your own webber.
+
+I have two BS I want to move (1 on each acct), but if there isn't interest now I may wait a few weeks and try to ninja them out on my own.
+
+I will not be convoying from AZN/XGH or anywhere else to start. The convoy will depart K-9 directly. If you don't have a jump clone in that station, I recommend installing one right away. There's no telling how long station services will remain up given hostile activity in JO and OOYZ.
+
+edit: see my post below. We'll do this after we abort another supercap at 0200 EVE.
+]]></text>
+			<poster>lljkDeathscythe</poster>
+		</op>
+		<op>
+			<title>Kenny regains Sov in Delve!</title>
+			<startTime>2009-03-03 16:00:00 UTC</startTime>
+			<endTime>2009-03-03 16:30:00 UTC</endTime>
+			<priority>critical</priority>
+			<thread/>
+			<formup/>
+			<shiptypes/>
+			<text><![CDATA[This is a placeholder until Jargoon finished the notice code.
+]]></text>
+			<poster>Solo Drakban</poster>
+		</op>
+		<op>
+			<title>TODAY KENNY GETS SOV 3 BACK</title>
+			<startTime>2009-03-04 00:00:00 UTC</startTime>
+			<endTime>2009-03-04 12:00:00 UTC</endTime>
+			<priority>critical</priority>
+			<thread>http://goonfleet.com/showthread.php?p=2665972</thread>
+			<formup>Delve</formup>
+			<shiptypes>EVERYTHING YOU GOT</shiptypes>
+			<text><![CDATA[DO NOT LET THIS HAPPEN.
+]]></text>
+			<poster>Praetorius Rex</poster>
+		</op>
+	</ops>
+</opapp>
