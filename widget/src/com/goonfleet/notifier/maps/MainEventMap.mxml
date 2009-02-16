@@ -19,8 +19,8 @@
 	
 	<EventHandlers type="{NotificationEvent.GET}">
 	
-		<!-- <HTTPServiceInvoker url="https://goonfleet.com/notifier_xml.php"> -->
-		<HTTPServiceInvoker url="http://localhost/goonfleet/notifier.xml" >
+		<HTTPServiceInvoker url="https://goonfleet.com/notifier_xml.php">
+		<!-- <HTTPServiceInvoker url="http://localhost/goonfleet/notifier.xml" > -->
 			
 			<resultHandlers>
 				<!-- parse the results -->
